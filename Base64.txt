@@ -1,0 +1,56 @@
+{
+  "OUTPUT": {
+    "GROOVY_CODE": 
+	"package basae64encoder;
+
+  import com.sap.it.script.v2.api.Message;
+  import java.io.InputStream;
+  import java.util.Base64;
+  import javax.xml.parsers.DocumentBuilder;
+  import javax.xml.parsers.DocumentBuilderFactory;
+  import org.w3c.dom.Document;
+  import org.w3c.dom.Node;
+
+  public class Basae64Encode {
+
+      public void transform(Message message) {
+          String text = null;
+          String encodedString = null;
+          try {
+              InputStream inputStream = message.getBody(InputStream.class);
+              DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+              factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+              factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+              factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+              DocumentBuilder builder = factory.newDocumentBuilder();
+              Document doc = builder.parse(inputStream);
+              Node textNode = doc.getElementsByTagName("Text").item(0);
+              text = textNode.getFirstChild().getNodeValue();
+              byte[] bytes = text.getBytes();
+              encodedString = Base64.getEncoder().encodeToString(bytes);
+              String output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ns1:mtResponse xmlns:ns1=\"urn:sap.com:javaMapping\"><Text>" + encodedString + "</Text></ns1:mtResponse>";
+              message.setBody(output);
+          } catch (Exception var12) {
+              throw new RuntimeException(var12.toString());
+          }
+      }
+  }
+
+  def Message processData(Message message) {
+      new Basae64Encode().transform(message);
+      return message;
+  },
+    "CONVERSION_SUCCESSFUL": true,
+    "ISSUES": [],
+    "FIX_ATTEMPTS_USED": 1,
+    "LOOKUP_INFO": {
+      "USES_LOOKUP": false,
+      "LOOKUP_CHANNELS": []
+    }
+  }",
+  "TOKEN_USAGE": {
+    "COMPLETION_TOKENS": 1203,
+    "PROMPT_TOKENS": 3952,
+    "TOTAL_TOKENS": 5155
+  }
+}
