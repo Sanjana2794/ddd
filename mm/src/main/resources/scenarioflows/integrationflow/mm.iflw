@@ -105,7 +105,7 @@
                 <value>Not Required</value>
             </ifl:property>
         </bpmn2:extensionElements>
-        <bpmn2:endEvent id="EndEvent_2" name="End">
+        <bpmn2:endEvent id="EndEvent_2" name="d">
             <bpmn2:extensionElements>
                 <ifl:property>
                     <key>componentVersion</key>
