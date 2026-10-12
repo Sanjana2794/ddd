@@ -119,7 +119,7 @@
             <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
             <bpmn2:messageEventDefinition/>
         </bpmn2:endEvent>
-        <bpmn2:startEvent id="StartEvent_2" name="nnnnnnnnnnnnnnnnnnnnnnnnnnnnnn">
+        <bpmn2:startEvent id="StartEvent_2" name="Start 2">
             <bpmn2:extensionElements>
                 <ifl:property>
                     <key>componentVersion</key>
