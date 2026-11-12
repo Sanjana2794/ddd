@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 SAP-RuntimeProfile: iflmap
 Bundle-SymbolicName: SFTP_LargeDataTransfer_ResourceCockpit
 Bundle-Name: SFTP_LargeDataTransfer_Resource
-Bundle-Version: 16.0.17
+Bundle-Version: 16.0.18
 Bundle-ManifestVersion: 2
 Origin-Bundle-SymbolicName: SFTP_LargeDataTransfer_ResourceCockpit
 SAP-NodeType: IFLMAP
