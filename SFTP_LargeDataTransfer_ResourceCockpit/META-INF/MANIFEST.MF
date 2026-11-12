@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 SAP-RuntimeProfile: iflmap
 Bundle-SymbolicName: SFTP_LargeDataTransfer_ResourceCockpit
-Bundle-Name: SFTP_LargeDataTransfer_ResourceCockpit
-Bundle-Version: 1.0.16
+Bundle-Name: SFTP_LargeDataTransfer_Resource
+Bundle-Version: 16.0.17
 Bundle-ManifestVersion: 2
 Origin-Bundle-SymbolicName: SFTP_LargeDataTransfer_ResourceCockpit
 SAP-NodeType: IFLMAP
@@ -32,7 +32,7 @@ Import-Package: com.sap.esb.application.services.cxf.interceptor,com.sap
  om.sap.esb.camel.jdbc.idempotency.reorg,javax.sql,org.apache.camel.proc
  essor.idempotent.jdbc,org.osgi.service.blueprint;version="[1.0.0,2.0.0)
  "
-Origin-Bundle-Name: SFTP_LargeDataTransfer_ResourceCockpit123
+Origin-Bundle-Name: SFTP_LargeDataTransfer_ResourceCockpit
 SAP-BundleType: IntegrationFlow
 Import-Service: com.sap.esb.webservice.audit.log.AuditLogger,com.sap.esb
  .security.KeyManagerFactory;multiple:=false,com.sap.esb.security.TrustM
